@@ -1,9 +1,9 @@
 # Faulty-wafers
-Problem Statement:
+### Problem Statement:
 
 The inputs of various sensors for different wafers have been provided. In electronics, a wafer (also called a slice or substrate) is a thin slice of semiconductor used for the fabrication of integrated circuits. The goal is to build a machine learning model which predicts whether a wafer needs to be replaced or not(i.e., whether it is working or not) based on the inputs from various sensors. 
 
-Data Description:
+### Data Description:
 
 The client will send data in multiple sets of files in batches at a given location. Data will contain Wafer names and 590 columns of different sensor values for each wafer. The last column will have the "Good/Bad" value for each wafer.
 "Good/Bad" column will have two unique values +1 and -1.
@@ -15,7 +15,7 @@ The client will send data in multiple sets of files in batches at a given locati
 Apart from training files, we also require a "schema" file from the client, which contains all the relevant information about the training files such as:
 Name of the files, Length of Date value in FileName, Length of Time value in FileName, Number of Columns, Name of the Columns, and their datatype.
  
-Data Validation: 
+### Data Validation: 
 
 In this step, we perform different sets of validation on the given set of training files.  
 
@@ -29,7 +29,7 @@ In this step, we perform different sets of validation on the given set of traini
 
 5.	Null values in columns- If any of the columns in a file have all the values as NULL or missing, we discard such a file and move it to "Bad_Data_Folder".
 
-Data Insertion in Database:
+### Data Insertion in Database:
  
 1) Database Creation and connection- Create a database with the given name passed. If the database is already created, open the connection to the database. 
 
@@ -55,13 +55,13 @@ Model Training:
 
 
 
-PREDICTION DATA DESCRIPTION
+## PREDICTION DATA DESCRIPTION
  
 Client will send the data in multiple set of files in batches at a given location. Data will contain Wafer names and 590 columns of different sensor values for each wafer. 
 Apart from prediction files, we also require a "schema" file from client which contains all the relevant information about the training files such as:
 Name of the files, Length of Date value in FileName, Length of Time value in FileName, Number of Columns, Name of the Columns and their datatype.
  
- Data Validation:
+### Data Validation:
  
 In this step, we perform different sets of validation on the given set of training files.  
 
@@ -75,7 +75,7 @@ In this step, we perform different sets of validation on the given set of traini
 
 5) Null values in columns- If any of the columns in a file has all the values as NULL or missing, we discard such file and move it to "Bad_Data_Folder".  
 
-Data Insertion in Database: 
+### Data Insertion in Database: 
 
 1) Database Creation and connection- Create database with the given name passed. If the database is already created, open the connection to the database. 
 
@@ -83,7 +83,7 @@ Data Insertion in Database:
 
 3) Insertion of files in the table- All the files in the "Good_Data_Folder" are inserted in the above-created table. If any file has invalid data type in any of the columns, the file is not loaded in the table and is moved to "Bad_Data_Folder".
 
-Prediction: 
+### Prediction: 
  
 1) Data Export from Db- The data in the stored database is exported as a CSV file to be used for prediction.
 
@@ -100,7 +100,7 @@ Prediction:
 5) Once the prediction is made for all the clusters, the predictions along with the Wafer names are saved in a CSV file at a given location and the location is returned to the client.
 
 
-Project By: PRAKHAR KATIYAR
+## Project By: PRAKHAR KATIYAR
 
 Thank You!
 
